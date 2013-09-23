@@ -16,7 +16,7 @@ import edu.cmu.deiis.types.Answer;
 import edu.cmu.deiis.types.Question;
 import edu.cmu.deiis.types.Token;
 
-public class ScoreAnnotator extends JCasAnnotator_ImplBase {
+public class AnswerScore extends JCasAnnotator_ImplBase {
 
   @Override
   public void process(JCas arg0) throws AnalysisEngineProcessException {

@@ -13,7 +13,7 @@ import java.util.List;
 import edu.cmu.deiis.types.Answer;
 import edu.cmu.deiis.types.Question;
 
-public class Precision extends JCasAnnotator_ImplBase {
+public class Evaluation extends JCasAnnotator_ImplBase {
 
   @Override
   public void process(JCas arg0) throws AnalysisEngineProcessException {
