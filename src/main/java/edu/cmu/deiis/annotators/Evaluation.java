@@ -14,9 +14,12 @@ import edu.cmu.deiis.types.Answer;
 import edu.cmu.deiis.types.Question;
 
 public class Evaluation extends JCasAnnotator_ImplBase {
+  double sumPrecision = 0.0;
+  int countQuestion = 0;
 
   @Override
   public void process(JCas arg0) throws AnalysisEngineProcessException {
+
     Question ques = null;
     List<Answer> ansList = new ArrayList<Answer>();
 
@@ -25,7 +28,7 @@ public class Evaluation extends JCasAnnotator_ImplBase {
     Iterator<?> questionIter = questionIndex.iterator();
     while (questionIter.hasNext()) {
       ques = (Question) questionIter.next();
-      System.out.println(String.format("Q: %s", ques.getCoveredText()));
+      System.out.println(String.format("Question: %s", ques.getCoveredText()));
 
       // iterate answers
       FSIndex<?> answerIndex = arg0.getAnnotationIndex(Answer.type);
@@ -37,16 +40,16 @@ public class Evaluation extends JCasAnnotator_ImplBase {
       }
     }
 
-    // calculate precision
-    double totalCorrect = 0.0;
+    // calculate precision@N
+    double N = 0.0;
     for (Answer answer : ansList) {
       if (answer.getIsCorrect()) {
-        totalCorrect++;
+        N++;
       }
     }
 
     int countCorrect = 0;
-    for (int i = 0; i < totalCorrect; i++) {
+    for (int i = 0; i < N; i++) {
       if (ansList.get(i).getIsCorrect()) {
         countCorrect++;
       }
@@ -61,10 +64,18 @@ public class Evaluation extends JCasAnnotator_ImplBase {
       } else {
         correctInd = "-";
       }
-      System.out.println(String.format("A: %s %.2f %s", correctInd, answer.getConfidence(),
+      System.out.println(String.format("%s %.2f %s", correctInd, answer.getConfidence(),
               answer.getCoveredText()));
     }
-    double precision = countCorrect / totalCorrect;
-    System.out.println(String.format("Precision at %d: %.2f ", (int) totalCorrect, precision));
+    double precision = countCorrect / N;
+    System.out.println(String.format("Precision at %.1f: %.2f ", N, precision));
+    sumPrecision += precision;
+    countQuestion +=1 ;
+  }
+  
+  @Override
+  public void collectionProcessComplete()
+      throws AnalysisEngineProcessException {
+    System.out.println(String.format("Average Precision: %.2f", sumPrecision/countQuestion));
   }
 }

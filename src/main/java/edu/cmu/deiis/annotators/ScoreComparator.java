@@ -11,7 +11,5 @@ public class ScoreComparator implements Comparator<Answer> {
     } else {
       return 1;
     }
-
   }
-
 }
