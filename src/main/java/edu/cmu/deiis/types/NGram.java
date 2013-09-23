@@ -11,7 +11,7 @@ import org.apache.uima.jcas.cas.FSArray;
 
 
 /** 
- * Updated by JCasGen Sun Sep 22 22:52:58 EDT 2013
+ * Updated by JCasGen Sun Sep 22 23:59:13 EDT 2013
  * XML source: /Users/Apple/Documents/workspace_Java/hw2-wenyiwan/src/main/resources/descriptors/hw2-wenyiwan-aae.xml
  * @generated */
 public class NGram extends Annotation {
