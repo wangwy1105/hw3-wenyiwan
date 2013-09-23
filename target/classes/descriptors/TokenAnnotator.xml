@@ -19,10 +19,7 @@
     <fsIndexCollection/>
     <capabilities>
       <capability>
-        <inputs>
-          <type allAnnotatorFeatures="true">edu.cmu.deiis.types.Question</type>
-          <type allAnnotatorFeatures="true">edu.cmu.deiis.types.Answer</type>
-        </inputs>
+        <inputs/>
         <outputs>
           <type allAnnotatorFeatures="true">edu.cmu.deiis.types.Token</type>
         </outputs>
