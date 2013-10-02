@@ -17,8 +17,14 @@ import edu.stanford.nlp.objectbank.TokenizerFactory;
 import edu.stanford.nlp.process.PTBTokenizer.PTBTokenizerFactory;
 import edu.stanford.nlp.process.Tokenizer;
 
+/**
+ * @author wwy
+ */
 public class TokenAnnotator extends JCasAnnotator_ImplBase {
 
+  /* (non-Javadoc)
+   * @see org.apache.uima.analysis_component.JCasAnnotator_ImplBase#process(org.apache.uima.jcas.JCas)
+   */
   @Override
   public void process(JCas arg0) throws AnalysisEngineProcessException {
     String text = arg0.getDocumentText();

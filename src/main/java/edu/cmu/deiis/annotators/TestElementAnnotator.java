@@ -8,6 +8,10 @@ import edu.cmu.deiis.types.Answer;
 import edu.cmu.deiis.types.Question;
 
 public class TestElementAnnotator extends JCasAnnotator_ImplBase {
+  
+  /* (non-Javadoc)
+   * @see org.apache.uima.analysis_component.JCasAnnotator_ImplBase#process(org.apache.uima.jcas.JCas)
+   */
   @Override
   public void process(JCas aJCas) throws AnalysisEngineProcessException {
     String docText = aJCas.getDocumentText();
