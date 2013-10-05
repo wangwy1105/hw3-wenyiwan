@@ -14,7 +14,7 @@ import org.apache.uima.cas.impl.FeatureImpl;
 import org.apache.uima.cas.Feature;
 
 /** 
- * Updated by JCasGen Sun Sep 22 23:59:13 EDT 2013
+ * Updated by JCasGen Fri Oct 04 21:18:05 EDT 2013
  * @generated */
 public class Question_Type extends Annotation_Type {
   /** @generated */

@@ -16,6 +16,9 @@
   <delegateAnalysisEngine key="Precision">
       <import name="descriptors.Precision"/>
     </delegateAnalysisEngine>
+  <delegateAnalysisEngine key="NEAnnotator">
+      <import name="descriptors.NEAnnotator"/>
+    </delegateAnalysisEngine>
   </delegateAnalysisEngineSpecifiers>
   <analysisEngineMetaData>
     <name>hw2-wenyiwan-aae</name>
@@ -27,8 +30,9 @@
     <flowConstraints>
       <fixedFlow>
         <node>TestElementAnnotator</node>
+        <node>NEAnnotator</node>
         <node>TokenAnnotator</node>
-        <node>ScoreAnnotator</node>
+      <node>ScoreAnnotator</node>
       <node>Precision</node>
       </fixedFlow>
     </flowConstraints>
