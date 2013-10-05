@@ -7,6 +7,10 @@ import org.apache.uima.jcas.JCas;
 import edu.cmu.deiis.types.Answer;
 import edu.cmu.deiis.types.Question;
 
+/**
+ * This class is for the TestElementAnnotator required in hw2.
+ * @author wwy
+ */
 public class TestElementAnnotator extends JCasAnnotator_ImplBase {
   
   /* (non-Javadoc)

@@ -18,6 +18,7 @@ import edu.stanford.nlp.process.PTBTokenizer.PTBTokenizerFactory;
 import edu.stanford.nlp.process.Tokenizer;
 
 /**
+ * This class is for token annotation.
  * @author wwy
  */
 public class TokenAnnotator extends JCasAnnotator_ImplBase {

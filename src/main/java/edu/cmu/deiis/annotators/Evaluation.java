@@ -13,6 +13,11 @@ import java.util.List;
 import edu.cmu.deiis.types.Answer;
 import edu.cmu.deiis.types.Question;
 
+/**
+ *
+ * This class is for calculating the precision @ N, from hw2.
+ * @author wwy
+ */
 public class Evaluation extends JCasAnnotator_ImplBase {
   double sumPrecision = 0.0;
   int countQuestion = 0;

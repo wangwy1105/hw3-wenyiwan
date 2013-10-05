@@ -16,6 +16,10 @@ import edu.cmu.deiis.types.Answer;
 import edu.cmu.deiis.types.Question;
 import edu.cmu.deiis.types.Token;
 
+/**
+ * This class is for assigning scores to each answer.
+ * @author wwy
+ */
 public class AnswerScore extends JCasAnnotator_ImplBase {
 
   @Override
@@ -76,7 +80,12 @@ public class AnswerScore extends JCasAnnotator_ImplBase {
     }
   }
 
-  // generate a score based on the overlapping between tokens in answer and tokens in question
+  /**
+   * This method generates a score based on the overlapping between tokens in answer and tokens in question
+   * @param question
+   * @param answer
+   * @return
+   */
   private double getScore(Map<String, Integer> ques, Map<String, Integer> ans) {
     double score = 0.0;
     for (Entry<String, Integer> tok : ques.entrySet()) {
@@ -91,7 +100,11 @@ public class AnswerScore extends JCasAnnotator_ImplBase {
     return score / length;
   }
 
-  // count the # of appearance of tokens in a Q or A
+  /**
+   * This method counts the # of appearance of tokens in a Q or A
+   * @param list of strings
+   * @return
+   */
   private Map<String, Integer> token2count(List<String> list) {
     Map<String, Integer> questionCounts = new HashMap<String, Integer>();
     for (String token : list) {
